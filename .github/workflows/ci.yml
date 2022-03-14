@@ -26,9 +26,19 @@ jobs:
       - run: npm test -- --coverage
         env:
           CI: true
+      - name: Upload Test Coverage
+        uses: actions/upload-artifacts@v1
+        with:
+          name: code-coverage
+          patch: coverage
       - name: Build project
         if: github.event_name == 'push'
         run: npm run build
+      - name: Upload Build Folder
+        uses: actions/upload-artifacts@v1
+        with:
+          name: build
+          patch: build
       - name: Deploy on Staging
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain tiresome-ocean.surge.sh
