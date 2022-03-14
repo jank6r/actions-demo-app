@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: code-coverage
-          patch: coverage
+          path: coverage
       - name: Build project
         if: github.event_name == 'push'
         run: npm run build
@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: build
-          patch: build
+          path: build
       - name: Deploy on Staging
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain tiresome-ocean.surge.sh
