@@ -59,9 +59,8 @@ jobs:
       - name: Deploy on Production
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx surge --project ./build --domain tiresome-ocean.surge.sh
-      - name: Upload Coverage Report 
+      - name: Upload Coverage Report
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         run: npx codecov
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-  
