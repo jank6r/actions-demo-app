@@ -3,7 +3,7 @@ const github = require("@actions/github");
 
 try {
   //throw(new Error("Fail"))
-  const name = code.getInput("who-to-grret");
+  const name = core.getInput("who-to-grret");
   console.log(`Hello ${name}`);
 
   const time = new Date();

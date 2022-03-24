@@ -882,7 +882,7 @@ const github = __webpack_require__(469);
 
 try {
   //throw(new Error("Fail"))
-  const name = code.getInput("who-to-grret");
+  const name = core.getInput("who-to-grret");
   console.log(`Hello ${name}`);
 
   const time = new Date();
