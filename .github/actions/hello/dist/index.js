@@ -886,11 +886,11 @@ try {
   console.log(`Hello ${name}`);
 
   const time = new Date();
-  code.setOutput("time", time.toTimeString());
+  core.setOutput("time", time.toTimeString());
 
   console.log(JSON.stringify(github, null, "\t"));
 } catch (error) {
-  code.setFailed(error.message);
+  core.setFailed(error.message);
 }
 //
 
