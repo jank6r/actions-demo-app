@@ -1,4 +1,10 @@
 ![](https://github.com/jank6r/actions-demo-app/workflows/CI/badge.svg?branch=develop&event=push)
+
+# Notes
+
+https://github.com/commitizen/cz-cli
+
+
 # Getting Started with Create React App
 
 https://tiresome-ocean.surge.sh/

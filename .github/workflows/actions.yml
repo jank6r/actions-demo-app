@@ -10,5 +10,15 @@ jobs:
           who-to-greet: "All!"
       - run: |
           echo "Time ${{ steps.hello.outputs.time }}"  
+      - uses: ./.github/actions/issue
+        id: issue
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Title
+          body: Body
+          assignees: 'jank6r'
+      - run: |
+          echo "Time ${{ steps.id.outputs.issue }}"  
+      
 
       
