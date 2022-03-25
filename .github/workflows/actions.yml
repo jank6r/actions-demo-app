@@ -4,8 +4,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/hello
-        id: hello-docker
+      - uses: ./.github/actions/hello-docker
+        id: hello
         with:
           who-to-greet: "All!"
       - run: |
