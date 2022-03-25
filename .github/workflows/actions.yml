@@ -1,0 +1,25 @@
+on: push
+jobs:
+  testing-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/hello-docker
+        id: hello
+        with:
+          who-to-greet: "All!"
+      - run: |
+          echo "Time ${{ steps.hello.outputs.time }}"  
+          echo $HELLO
+      - uses: ./.github/actions/issue
+        id: issue
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Title
+          body: Body
+          assignees: 'jank6r'
+      - run: |
+          echo "Issue ${{ steps.issue.outputs.issue }}"  
+      
+
+      
