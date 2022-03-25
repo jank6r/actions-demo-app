@@ -5,11 +5,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/hello
-        id: hello
+        id: hello-docker
         with:
           who-to-greet: "All!"
       - run: |
           echo "Time ${{ steps.hello.outputs.time }}"  
+          echo $HELLO
       - uses: ./.github/actions/issue
         id: issue
         with:
